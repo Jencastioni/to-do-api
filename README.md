@@ -150,3 +150,21 @@ HTTP/1.1 204 No Content
 1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
 # to-do-api
+
+## WireFrame
+https://imgur.com/a/vyS31Du
+
+[![To Do List WireFrame](https://imgur.com/a/vyS31Du)]
+
+[![To Do List ERD](https://imgur.com/a/bAxHGxM)]
+
+## User Stories
+- As an unregistered user, I would like to sign up with email and password.
+- As a registered user, I would like to sign in with email and password.
+- As a signed in user, I would like to change password.
+- As a signed in user, I would like to sign out.
+- As a signed in user, I would like to create a task.
+- As a signed in user, I would like to update my tasks.
+- As a signed in user, I would like to delete my tasks.
+- As a signed in user, I would like to check off my completed tasks.
+- As a signed in user, I would like to see completed and active tasks.
