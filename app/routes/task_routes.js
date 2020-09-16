@@ -32,6 +32,7 @@ const router = express.Router()
 router.get('/tasks', requireToken, (req, res, next) => {
     const owner = req.user.id  
   Task.find({owner: owner})
+    .sort('category')
     .sort('date')
     .then(tasks => {
       // `examples` will be an array of Mongoose documents
