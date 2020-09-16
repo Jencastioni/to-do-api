@@ -12,7 +12,8 @@ curl "${API}${URL_PATH}" \
     "task": {
       "category": "'"${CATEGORY}"'",
       "title": "'"${TITLE}"'",
-      "text": "'"${TEXT}"'"
+      "text": "'"${TEXT}"'",
+      "date": "'"${DATE}"'"
     }
   }'
 

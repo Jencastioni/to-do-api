@@ -32,6 +32,7 @@ const router = express.Router()
 router.get('/tasks', requireToken, (req, res, next) => {
     const owner = req.user.id  
   Task.find({owner: owner})
+    .sort('date')
     .then(tasks => {
       // `examples` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
@@ -79,7 +80,7 @@ router.post('/tasks', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH /examples/5a7db6c74d55bc51bdf39793
-router.patch('/tasks/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/tasks/:id/update', requireToken, removeBlanks, (req, res, next) => {
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
   delete req.body.task.owner

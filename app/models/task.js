@@ -13,6 +13,10 @@ const taskSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  date: {
+    type: Date,
+    required: true
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
