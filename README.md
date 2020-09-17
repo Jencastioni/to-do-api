@@ -1,26 +1,49 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# CheckIt - Task Manager App
+
+CheckIt is a single-page web application designed for anyone who wants to keep organized.You shouldn't have to read a manual to use an app that helps you stay organized and with CheckIt you don't have to! 
+
+CheckIt allows users to keep track of their everyday tasks. Users can add, update and delete tasks as they complete them, and each task is categorized into 1 of 4 priorities per the Eisnehower Matrix (Important and Urgent, Important and Not Urgent, Urgent and Not Important, Not Urgent and Not Important).
 
 
-## Tasks
+## Important Links
 
-Instead of `grunt`, this template uses `npm` as a task runner. This is more
-conventional for modern Express apps, and it's handy because we'll definitely
-use `npm` anyway. These are the commands available:
+- [CheckIt API Repo](https://github.com/LadiesLoveCleanCode/MangoDB-api)
+- [Deployed API](https://floating-mesa-18024.herokuapp.com)
+- [Deployed Client](https://ladieslovecleancode.github.io/MangoDB-client)
+- [Requirements](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/blob/master/requirements.md)
 
-| Command                | Effect                                                                                                      |
-|------------------------|-------------------------------------------------------------------------------------------------------------|
-| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.                                                                                         |
-| `npm test`             | Runs automated tests.                                                                                       |
-| `npm run debug-server` | Starts the server in debug mode, which will print lots of extra info about what's happening inside the app. |
 
-## API
+## Planning Story
 
-Use this as the basis for your own API documentation. Add a new third-level
-heading for your custom entities, and follow the pattern provided for the
-built-in user authentication documentation.
+I began planning on creating some type of to-do list app as I am always struggling to stay organized. I drew up my wiredrame and ERD and was able to formulte a plan to create it. My app remained unnamed until days later!
 
-Scripts are included in [`curl-scripts`](curl-scripts) to test built-in actions.
-Add your own scripts to test your custom API.
+The first step was to set up the back end API and make sure to enable CRUD actions on authentication and resources. Next, was setting up the front end, following a similar CRUD process. Finally, I designed the front end using the React framework.
+
+
+### User Stories
+
+- As an unregistered user, I would like to sign up with email and password.
+- As a registered user, I would like to sign in with email and password.
+- As a signed in user, I would like to change password.
+- As a signed in user, I would like to sign out.
+- As a signed in user, I would like to create a task.
+- As a signed in user, I would like to update my task.
+- As a signed in user, I would like to delete my itask.
+- As a signed in user, I would like to see all tasks.
+- As a signed in user, I would like to see completed tasks.
+- As a signed in user, I would like my tasks to be organized by priority and date.
+
+
+### Technologies Used
+
+- HTML/CSS
+- Bootstrap
+- Javascript
+- React
+- React Router
+- Express.js
+- MongoDB
+
 
 ### Authentication
 
@@ -31,140 +54,23 @@ Add your own scripts to test your custom API.
 | PATCH  | `/change-password/` | `users#changepw`  |
 | DELETE | `/sign-out/`        | `users#signout`   |
 
-#### POST /sign-up
 
-Request:
+### Unsolved Problems
 
-```sh
-curl --include --request POST http://localhost:4741/sign-up \
-  --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "an@example.email",
-      "password": "an example password",
-      "password_confirmation": "an example password"
-    }
-  }'
-```
+In a future iteration of CheckIt, I want there to be more categories of tasks and from there you can prioritize them.
 
-```sh
-curl-scripts/sign-up.sh
-```
 
-Response:
+### Catalog of Routes
 
-```md
-HTTP/1.1 201 Created
-Content-Type: application/json; charset=utf-8
+Verb         |	URI Pattern
+------------ | -------------
+| GET | /tasks  |
+| GET | /tasks/:id  |
+| POST | /tasks  |
+| PATCH | /tasks/:id  |
+| DELETE | /tasks/:id  |
 
-{
-  "user": {
-    "id": 1,
-    "email": "an@example.email"
-  }
-}
-```
 
-#### POST /sign-in
+## ERD
 
-Request:
-
-```sh
-curl --include --request POST http://localhost:4741/sign-in \
-  --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "an@example.email",
-      "password": "an example password"
-    }
-  }'
-```
-
-```sh
-curl-scripts/sign-in.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-
-{
-  "user": {
-    "id": 1,
-    "email": "an@example.email",
-    "token": "33ad6372f795694b333ec5f329ebeaaa"
-  }
-}
-```
-
-#### PATCH /change-password/
-
-Request:
-
-```sh
-curl --include --request PATCH http://localhost:4741/change-password/ \
-  --header "Authorization: Bearer $TOKEN" \
-  --header "Content-Type: application/json" \
-  --data '{
-    "passwords": {
-      "old": "an example password",
-      "new": "super sekrit"
-    }
-  }'
-```
-
-```sh
-TOKEN=33ad6372f795694b333ec5f329ebeaaa curl-scripts/change-password.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 204 No Content
-```
-
-#### DELETE /sign-out/
-
-Request:
-
-```sh
-curl --include --request DELETE http://localhost:4741/sign-out/ \
-  --header "Authorization: Bearer $TOKEN"
-```
-
-```sh
-TOKEN=33ad6372f795694b333ec5f329ebeaaa curl-scripts/sign-out.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 204 No Content
-```
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
-# to-do-api
-
-## WireFrame
-https://imgur.com/a/vyS31Du
-
-[![To Do List WireFrame](https://imgur.com/a/vyS31Du)]
-
-[![To Do List ERD](https://imgur.com/a/bAxHGxM)]
-
-## User Stories
-- As an unregistered user, I would like to sign up with email and password.
-- As a registered user, I would like to sign in with email and password.
-- As a signed in user, I would like to change password.
-- As a signed in user, I would like to sign out.
-- As a signed in user, I would like to create a task.
-- As a signed in user, I would like to update my tasks.
-- As a signed in user, I would like to delete my tasks.
-- As a signed in user, I would like to check off my completed tasks.
-- As a signed in user, I would like to see completed and active tasks.
+[![CheckIt ERD](https://imgur.com/a/bAxHGxM)]
