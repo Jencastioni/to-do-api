@@ -9,8 +9,9 @@ CheckIt allows users to keep track of their everyday tasks. Users can add, updat
 
 - [CheckIt API Repo](https://github.com/Jencastioni/to-do-api)
 - [Deployed API](https://floating-reef-69808.herokuapp.com/)
-- [Deployed Client](https://github.com/Jencastioni/to-do-client)
+- [Deployed Client](https://jencastioni.github.io/to-do-client)
 - [Requirements](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/blob/master/requirements.md)
+
 
 
 ## Planning Story
