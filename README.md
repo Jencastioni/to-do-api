@@ -5,13 +5,21 @@ CheckIt is a single-page web application designed for anyone who wants to keep o
 CheckIt allows users to keep track of their everyday tasks. Users can add, update and delete tasks as they complete them, and each task is categorized into 1 of 4 priorities per the Eisnehower Matrix (Important and Urgent, Important and Not Urgent, Urgent and Not Important, Not Urgent and Not Important).
 
 
+## Preparation
+
+1. Fork and clone this repository.
+1. Create a new branch, for your work.
+1. Checkout to that branch.
+1. Install dependencies with `npm install`.
+1. Use `npm start` to start up the locals server in your browser
+
+
 ## Important Links
 
 - [CheckIt API Repo](https://github.com/Jencastioni/to-do-api)
 - [Deployed API](https://floating-reef-69808.herokuapp.com/)
 - [Deployed Client](https://jencastioni.github.io/to-do-client)
 - [Requirements](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/blob/master/requirements.md)
-
 
 
 ## Planning Story
