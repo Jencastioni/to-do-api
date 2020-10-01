@@ -8,7 +8,8 @@ curl "http://localhost:4741/tasks/${ID}" \
     "category": "'"${CATEGORY}"'",
     "title": "'"${TITLE}"'",
     "text": "'"${TEXT}"'",
-    "date": "'"${DATE}"'"
+    "date": "'"${DATE}"'",
+    "checkBox": "'"${CHECKBOX}"'"
   }
 }'
 

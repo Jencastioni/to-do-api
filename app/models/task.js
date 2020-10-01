@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 const taskSchema = new mongoose.Schema({
   category: {
     type: String,
-    required: true
+    required: true,
+    options: [ '1', '2', '3', '4', 'Completed']
   },
   title: {
     type: String,
@@ -16,6 +17,11 @@ const taskSchema = new mongoose.Schema({
   date: {
     type: Date,
     required: true
+  },
+  checkBox: {
+    type: Boolean,
+    required: false,
+    default: false
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,

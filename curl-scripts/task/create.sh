@@ -13,7 +13,8 @@ curl "${API}${URL_PATH}" \
       "category": "'"${CATEGORY}"'",
       "title": "'"${TITLE}"'",
       "text": "'"${TEXT}"'",
-      "date": "'"${DATE}"'"
+      "date": "'"${DATE}"'",
+      "checkBox": "'"${CHECKBOX}"'"
     }
   }'
 
