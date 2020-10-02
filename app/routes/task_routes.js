@@ -89,12 +89,13 @@ router.patch('/tasks/:id/update', requireToken, removeBlanks, (req, res, next) =
   Task.findById(req.params.id)
     .then(handle404)
     .then(task => {
-      // pass the `req` object and the Mongoose record to `requireOwnership`
-      // it will throw an error if the current user isn't the owner
       requireOwnership(req, task)
-
-      // pass the result of Mongoose's `.update` to the next `.then`
-      return task.updateOne(req.body.task)
+      task.category = req.body.task.category
+      if (task.checkbox) {
+        return task.category.options[4] === 'Completed'
+      } else {
+        return task.updateOne(req.body.task)
+      }
     })
     // if that succeeded, return 204 and no JSON
     .then(() => res.sendStatus(204))
